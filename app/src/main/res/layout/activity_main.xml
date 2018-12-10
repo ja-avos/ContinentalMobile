@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/barajaIncialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground"
+                android:src="@drawable/cover"
+                android:visibility="visible"
+                tools:src="@drawable/cover"
+                tools:srcCompat="@drawable/cover" />
+
+            <ImageView
+                android:id="@+id/barajaJugadaImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/nocarta"
+                android:visibility="visible" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/cartaBarajaTempImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/nocarta"
+                android:clickable="false"
+                android:visibility="visible" />
+            <Space
+                android:layout_width="80dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/cartaJugadorTempImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/nocarta"
+                android:clickable="false"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/carta1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c10corazones"
+                    tools:srcCompat="@drawable/c10corazones" />
+
+                <ImageView
+                    android:id="@+id/carta2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c10picas"
+                    tools:srcCompat="@drawable/c10picas" />
+
+                <ImageView
+                    android:id="@+id/carta3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c10corazones"
+                    tools:srcCompat="@drawable/c2picas" />
+
+                <ImageView
+                    android:id="@+id/carta4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c6treboles"
+                    tools:srcCompat="@drawable/c6treboles" />
+
+                <ImageView
+                    android:id="@+id/carta5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c7treboles"
+                    tools:srcCompat="@drawable/c7treboles" />
+
+                <ImageView
+                    android:id="@+id/carta6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c8treboles"
+                    tools:srcCompat="@drawable/c8treboles" />
+
+                <ImageView
+                    android:id="@+id/carta7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:background="@drawable/nocarta"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/c10corazones"
+                    tools:srcCompat="@drawable/cktreboles" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
