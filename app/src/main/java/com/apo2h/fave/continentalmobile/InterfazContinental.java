@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class InterfazContinental extends AppCompatActivity {
 
     ImageView[] cartas;
 
@@ -81,6 +81,41 @@ public class MainActivity extends AppCompatActivity {
                 cartas[i].setTag("rutaDePrueba");
             else
                 cartas[i].setTag("noCarta");
+        }
+    }
+
+    //Lanza un mensaje en caso de ganar o perder la partida
+    public void victoria(boolean pVictoria){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Continental");
+        if(pVictoria){
+            builder.setMessage( "Felicitaciones, has ganado la partida.");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int id) {
+                    switch (id){
+                        case RESULT_OK:
+                            dialogInterface.dismiss();
+                            break;
+                    }
+                }
+            });
+        }
+        else{
+            builder.setMessage("Lo sentimos, no has ganado la partida.");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    switch (i){
+                        case RESULT_OK:
+                            dialogInterface.dismiss();
+                            break;
+                    }
+                }
+            });
         }
     }
 
