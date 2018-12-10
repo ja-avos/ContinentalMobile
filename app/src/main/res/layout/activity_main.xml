@@ -112,8 +112,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c10corazones"
-                    tools:srcCompat="@drawable/c10corazones" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta2"
@@ -122,8 +121,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c10picas"
-                    tools:srcCompat="@drawable/c10picas" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta3"
@@ -132,8 +130,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c10corazones"
-                    tools:srcCompat="@drawable/c2picas" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta4"
@@ -142,8 +139,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c6treboles"
-                    tools:srcCompat="@drawable/c6treboles" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta5"
@@ -152,8 +148,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c7treboles"
-                    tools:srcCompat="@drawable/c7treboles" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta6"
@@ -162,8 +157,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c8treboles"
-                    tools:srcCompat="@drawable/c8treboles" />
+                    />
 
                 <ImageView
                     android:id="@+id/carta7"
@@ -172,8 +166,7 @@
                     android:layout_weight="0"
                     android:background="@drawable/nocarta"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/c10corazones"
-                    tools:srcCompat="@drawable/cktreboles" />
+                    />
             </LinearLayout>
         </HorizontalScrollView>
 
