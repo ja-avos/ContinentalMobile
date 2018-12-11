@@ -1,5 +1,7 @@
 package mundo;
 
+import com.apo2h.fave.continentalmobile.InterfazContinental;
+
 public class ThreadEnviarJugada implements Runnable {
 
     /**
@@ -42,7 +44,7 @@ public class ThreadEnviarJugada implements Runnable {
     {
 
         jugador.realizarJugada( );
-        principal.actualizarInterfaz( );
+       // principal.actualizarInterfaz( );
         principal.esperarJugada( );
 
     }

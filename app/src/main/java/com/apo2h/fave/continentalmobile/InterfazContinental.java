@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import mundo.ContinentalException;
+import mundo.JugadorContinental;
+import mundo.ThreadEsperarJugada;
+
 public class InterfazContinental extends AppCompatActivity {
 
     ImageView[] cartas;
@@ -28,6 +32,8 @@ public class InterfazContinental extends AppCompatActivity {
     Button loginBtn;
 
     AlertDialog.Builder alerta;
+
+    JugadorContinental jugador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,6 +123,67 @@ public class InterfazContinental extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    //Muestra quien gano la partida
+    public void mostrarInformacionGanador(boolean pVictoriaValida){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Continental");
+
+        if(pVictoriaValida){
+            builder.setMessage("Lo sentimos, " + jugador.darNombreOponente() + " ha ganado la partida");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int id) {
+                    switch (id){
+                        case RESULT_OK:
+                            dialogInterface.dismiss();
+                            break;
+                    }
+                }
+            });
+        }
+        else{
+            builder.setMessage("Felicitaciones, has ganado el juego. " + jugador.darNombreOponente() + "cantó victoria invalida");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    switch (i){
+                        case RESULT_OK:
+                            dialogInterface.dismiss();
+                            break;
+                    }
+                }
+            });
+        }
+    }
+
+    //Muestra un error en caso de que el thread falle
+    public void mostrarError(ContinentalException pEvento){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Continental");
+        builder.setMessage(pEvento.getMessage());
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                switch (i) {
+                    case RESULT_OK:
+                        dialogInterface.dismiss();
+                        break;
+                }
+            }
+        });
+    }
+
+    /**
+     * Espera la jugada del oponente
+     */
+    public void esperarJugada(){
+        ThreadEsperarJugada t = new ThreadEsperarJugada(jugador, this);
+        t.start();
     }
 
     public void cambiarCarta(ImageView carta1, ImageView carta2)

@@ -2,7 +2,7 @@ package mundo;
 
 import com.apo2h.fave.continentalmobile.InterfazContinental;
 
-public class ThreadEsperarJugada implements Runnable {
+public class ThreadEsperarJugada extends Thread {
 
     /**
      * Referencia al juego
@@ -47,18 +47,18 @@ public class ThreadEsperarJugada implements Runnable {
             if( jugador.juegoTerminado( ) )
             {
                 principal.mostrarInformacionGanador( jugador.darVictoriaValidaOponente( ) );
-                principal.actualizarInterfaz( );
+               // principal.actualizarInterfaz( );
             }
             else
             {
-                principal.desactivarBotonJugar( );
-                principal.actualizarInterfaz( );
+               // principal.desactivarBotonJugar( );
+               // principal.actualizarInterfaz( );
             }
         }
         catch( ContinentalException e )
         {
             principal.mostrarError( e );
-            principal.desactivarBarajas( );
+           // principal.desactivarBarajas( );
         }
 
     }

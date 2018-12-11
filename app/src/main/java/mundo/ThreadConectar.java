@@ -67,13 +67,13 @@ public class ThreadConectar implements Runnable {
         try
         {
             jugador.conectar( nombre, servidor, puerto );
-            principal.actualizarInterfaz( );
-            principal.actualizarDatosOponente( );
-            principal.activarBarajas( );
+           // principal.actualizarInterfaz( );
+          //  principal.actualizarDatosOponente( );
+           // principal.activarBarajas( );
             if( jugador.darEstado( ).equals( JugadorContinental.ESPERANDO_JUGADA ) )
                 principal.esperarJugada( );
-            else
-                principal.desactivarBotonJugar( );
+           // else
+               // principal.desactivarBotonJugar( );
         }
         catch( ContinentalException e )
         {

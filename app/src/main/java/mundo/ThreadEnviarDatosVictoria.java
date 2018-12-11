@@ -46,7 +46,7 @@ public class ThreadEnviarDatosVictoria implements Runnable {
             {
                 principal.victoria( false );
             }
-            principal.actualizarInterfaz( );
+            //principal.actualizarInterfaz( );
         }
         catch( ContinentalException e )
         {

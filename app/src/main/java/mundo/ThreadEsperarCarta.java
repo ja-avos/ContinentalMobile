@@ -70,7 +70,7 @@ public class ThreadEsperarCarta implements Runnable {
             else if( baraja.equals( JUGADA ) )
                 jugador.pedirCartaBarajaJugada( );
 
-            principal.actualizarInterfaz( );
+            //principal.actualizarInterfaz( );
         }
         catch( ContinentalException e )
         {
