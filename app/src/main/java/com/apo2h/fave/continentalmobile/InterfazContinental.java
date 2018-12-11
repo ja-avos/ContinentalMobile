@@ -13,6 +13,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+
 import mundo.ContinentalException;
 import mundo.JugadorContinental;
 import mundo.ThreadConectar;
@@ -23,7 +28,9 @@ public class InterfazContinental extends AppCompatActivity {
     public static final int PUERTO = 9999;
 
 
-    ImageView[] cartas;
+    Socket server;
+
+    ImageButton[] cartas;
 
     ImageButton cartaBarajaI;
 
@@ -74,18 +81,32 @@ public class InterfazContinental extends AppCompatActivity {
         loginBtn.setOnClickListener(new IngresoListener());
     }
 
-    public void comenzarJuego(String usuario, String host)
+    public void comenzarJuego(String usuario, final String host)
     {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    server = new Socket(host, 9999);
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+
         setContentView(R.layout.activity_main);
 
-        cartas = new ImageView[7];
+        cartas = new ImageButton[7];
         cartaBarajaI = (ImageButton) findViewById(R.id.barajaIncialButton);
         cartaBarajaJ = (ImageView) findViewById(R.id.barajaJugadaImage);
 
         cartaBarajaJ.setOnLongClickListener(new ChoiceTouchListener());
         for(int i = 0; i < cartas.length; i++)
         {
-            cartas[i] = (ImageView) findViewById(GetID.getResId("carta" + (i+1), R.id.class));
+            cartas[i] = (ImageButton) findViewById(GetID.getResId("carta" + (i+1), R.id.class));
             cartas[i].setOnLongClickListener(new ChoiceTouchListener());
             if(i%2 != 0)
                 cartas[i].setTag("rutaDePrueba");
