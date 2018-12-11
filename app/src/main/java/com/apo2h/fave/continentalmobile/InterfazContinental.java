@@ -15,9 +15,13 @@ import android.widget.ImageView;
 
 import mundo.ContinentalException;
 import mundo.JugadorContinental;
+import mundo.ThreadConectar;
 import mundo.ThreadEsperarJugada;
 
 public class InterfazContinental extends AppCompatActivity {
+
+    public static final int PUERTO = 9999;
+
 
     ImageView[] cartas;
 
@@ -183,6 +187,13 @@ public class InterfazContinental extends AppCompatActivity {
      */
     public void esperarJugada(){
         ThreadEsperarJugada t = new ThreadEsperarJugada(jugador, this);
+        t.start();
+    }
+
+    public void conectar(){
+        String usuario = username.getText().toString();
+        String servidor = serverAddress.getText().toString();
+        ThreadConectar t = new ThreadConectar(jugador, this, usuario, servidor, PUERTO);
         t.start();
     }
 

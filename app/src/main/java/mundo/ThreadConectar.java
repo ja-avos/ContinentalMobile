@@ -2,7 +2,7 @@ package mundo;
 
 import com.apo2h.fave.continentalmobile.InterfazContinental;
 
-public class ThreadConectar implements Runnable {
+public class ThreadConectar extends Thread {
 
     /**
      * Referencia al juego.
@@ -46,9 +46,10 @@ public class ThreadConectar implements Runnable {
      * @param pDireccionServidor Dirección para localizar al servidor. direccionServidor != null.
      * @param pPuertoServidor Puerto a través del cual se realizará la conexión con el servidor. puertoServidor != null.
      */
-    public ThreadConectar( JugadorContinental pJuego, String pNombreJugador, String pDireccionServidor, int pPuertoServidor )
+    public ThreadConectar( JugadorContinental pJuego, InterfazContinental principal,  String pNombreJugador, String pDireccionServidor, int pPuertoServidor )
     {
         jugador = pJuego;
+        this.principal = principal;
         nombre = pNombreJugador;
         servidor = pDireccionServidor;
         puerto = pPuertoServidor;
