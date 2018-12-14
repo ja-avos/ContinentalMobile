@@ -4,6 +4,8 @@ import com.apo2h.fave.continentalmobile.InterfazContinental;
 
 public class ThreadConectar extends Thread {
 
+
+
     /**
      * Referencia al juego.
      */
@@ -68,7 +70,7 @@ public class ThreadConectar extends Thread {
         try
         {
             jugador.conectar( nombre, servidor, puerto );
-           // principal.actualizarInterfaz( );
+            principal.actualizarInterfaz( );
           //  principal.actualizarDatosOponente( );
            // principal.activarBarajas( );
             if( jugador.darEstado( ).equals( JugadorContinental.ESPERANDO_JUGADA ) )

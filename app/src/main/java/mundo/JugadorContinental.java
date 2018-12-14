@@ -37,7 +37,7 @@ public class JugadorContinental {
 
 
     //Constructor
-    public JugadorContinental(String numDerrotasOponente, String numVictoriasOponente, String nombre ){
+    public JugadorContinental( ){
         finJuego = false;
         juego = new Juego();
         estado = ESPERANDO_OPONENTE;

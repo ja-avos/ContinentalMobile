@@ -47,12 +47,12 @@ public class ThreadEsperarJugada extends Thread {
             if( jugador.juegoTerminado( ) )
             {
                 principal.mostrarInformacionGanador( jugador.darVictoriaValidaOponente( ) );
-               // principal.actualizarInterfaz( );
+               principal.actualizarInterfaz( );
             }
             else
             {
                // principal.desactivarBotonJugar( );
-               // principal.actualizarInterfaz( );
+               principal.actualizarInterfaz( );
             }
         }
         catch( ContinentalException e )

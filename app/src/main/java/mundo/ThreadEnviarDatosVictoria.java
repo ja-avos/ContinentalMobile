@@ -2,7 +2,7 @@ package mundo;
 
 import com.apo2h.fave.continentalmobile.InterfazContinental;
 
-public class ThreadEnviarDatosVictoria implements Runnable {
+public class ThreadEnviarDatosVictoria extends Thread {
 
     /**
      * Referencia al juego.
@@ -21,10 +21,11 @@ public class ThreadEnviarDatosVictoria implements Runnable {
      * Construye un nuevo hilo para validar una victoria.
      * @param pJuego Referencia al juego. juego != null.
      */
-    public ThreadEnviarDatosVictoria( JugadorContinental pJuego)
+    public ThreadEnviarDatosVictoria( JugadorContinental pJuego, InterfazContinental i)
     {
         super( );
         jugador = pJuego;
+        principal = i;
     }
 
     // -----------------------------------------------------------------
@@ -46,7 +47,7 @@ public class ThreadEnviarDatosVictoria implements Runnable {
             {
                 principal.victoria( false );
             }
-            //principal.actualizarInterfaz( );
+            principal.actualizarInterfaz( );
         }
         catch( ContinentalException e )
         {

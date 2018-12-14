@@ -2,7 +2,7 @@ package mundo;
 
 import com.apo2h.fave.continentalmobile.InterfazContinental;
 
-public class ThreadEsperarCarta implements Runnable {
+public class ThreadEsperarCarta extends Thread {
 
     /**
      * Representa a la baraja inicial.
@@ -70,7 +70,7 @@ public class ThreadEsperarCarta implements Runnable {
             else if( baraja.equals( JUGADA ) )
                 jugador.pedirCartaBarajaJugada( );
 
-            //principal.actualizarInterfaz( );
+            principal.actualizarInterfaz( );
         }
         catch( ContinentalException e )
         {
